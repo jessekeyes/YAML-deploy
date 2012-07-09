@@ -1,5 +1,30 @@
 // Typography
 
+//base colors
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+
+// Accent colors
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+
 //**** fonts ****/
 @fontSerif:			"Droid Serif", Georgia, "Times New Roman", Times, serif;
 @fontSans:			"Droid Sans", Arial, Helvetica, sans-serif;
@@ -9,6 +34,30 @@
 // colors of fonts
 @colorBodyText:		#444;
 @colorHeadings:		#161e21;
+
+//links
 @colorLinks:		#4D87C7;
+@colorLinksHover:	red;
+
+// Misc
 @colorHighlight:	#c30;
 @colorBoxBorder: 	#444;
+
+
+// Mixins
+
+.rounded-corners(@radius:3px) {
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-o-border-radius: @radius;
+	-ms-border-radius: @radius;
+}
+
+.box-shadow(@left:2px, @top:2px, @spead:6px, @color: @grayLight) {
+	box-shadow: @left @top @spread @color;
+	-webkit-box-shadow: @left @top @spread @color;
+	-moz-box-shadow: @left @top @spread @color;
+	-o-box-shadow: @left @top @spread @color;
+	-ms-box-shadow: @left @top @spread @color;
+}
