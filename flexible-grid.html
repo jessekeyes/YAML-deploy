@@ -10,14 +10,21 @@
 	<!-- (en) Add your meta data here -->
 	<!-- (de) Fuegen Sie hier ihre Meta-Daten ein -->
 
-	<link href="./css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
 	<!--[if lte IE 7]>
-	<link href="../yaml/core/iehacks.css" rel="stylesheet" type="text/css" />
+	<link href="css/iehacks.css" rel="stylesheet" type="text/css" />
 	<![endif]-->
 
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/css_browser_selector.js"></script>
+	<script type="text/javascript" src="js/cycle.js"></script>
+	<script type="text/javascript" src="js/jquery.syncheight.js"></script>
+	<script type="text/javascript" src="js/jquery.tabs.js"></script>
+	
+	<script type="text/javascript" src="js/application.js"></script>
 </head>
 <body>
 <ul class="ym-skiplinks">
@@ -35,10 +42,16 @@
 <nav id="nav">
 	<div class="ym-wrapper">
 		<div class="ym-hlist">
-			<ul>
+			<ul class="menu">
 				<li class="active"><strong>Active</strong></li>
 				<li><a href="#">Link</a></li>
-				<li><a href="#">Link</a></li>
+				<li><a href="#">Link</a>
+					<ul>
+						<li><a href="">yes dropdown</a></li>
+						<li><a href="">yes dropdown</a></li>
+						<li><a href="">yes dropdown</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Link</a></li>
 				<li><a href="#">Link</a></li>
 			</ul>
@@ -375,6 +388,6 @@
 </footer>
 
 <!-- full skip link functionality in webkit browsers -->
-<script src="../yaml/core/js/yaml-focusfix.js"></script>
+<script src="js/yaml-focusfix.js"></script>
 </body>
 </html>
