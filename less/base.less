@@ -26,6 +26,25 @@
 	/* (en) Global reset of paddings and margins for all HTML elements */
 	/* (de) Globales Zurücksetzen der Innen- und Außenabstände für alle HTML-Elemente */
 	* { margin:0; padding:0; }
+	
+	// sticky footer mods (main template needs to have a wrapper div
+	html, body {height: 100%;}
+	
+	#wrapper {
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		margin: 0 auto -@footerHeightReal !important; // height of footer/push
+	}
+	footer,.push {
+		height: @footerHeight; /* .push must be the same height as .footer */
+	}
+	
+	#main {
+		margin-bottom: 10px;
+	}
+
+
 
 	/* (en) Correction:margin/padding reset caused too small select boxes. */
 	/* (de) Korrektur:Das Zurücksetzen der Abstände verursacht zu kleine Selectboxen. */
