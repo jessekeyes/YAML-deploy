@@ -1,23 +1,19 @@
 $(document).ready(function(){
 
 	// search/form blurs
-	$.fn.search = function() {
-		return this.focus(function() {
-			if( this.value == this.defaultValue ) {
-				this.value = "";
-			}
-		}).blur(function() {
-			if( !this.value.length ) {
-				this.value = this.defaultValue;
-			}
+	$(function(){
+		$('.ym-searchfield').data('holder',$('.ym-searchfield').attr('placeholder'));
+		$('.ym-searchfield').focusin(function(){
+		    $(this).attr('placeholder','');
 		});
-	};
-
-	$(".ym-searchfield").search();
+		$('.ym-searchfield').focusout(function(){
+		    $(this).attr('placeholder',$(this).data('holder'));
+		});
+	});
 
 	// search box commit
-	$('#submit-search').click(function(){
-		$('#searchFormID').submit();
+	$('#submit').click(function(){
+		$(this).parent('form').submit();
 	});
 	
 });
