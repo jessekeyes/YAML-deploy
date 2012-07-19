@@ -1,15 +1,19 @@
 $(document).ready(function(){
 
 	// search/form blurs
-	$(function(){
-		$('.ym-searchfield').data('holder',$('.ym-searchfield').attr('placeholder'));
-		$('.ym-searchfield').focusin(function(){
-		    $(this).attr('placeholder','');
+	$.fn.field = function() {
+		return this.focus(function() {
+			if( this.value == this.defaultValue ) {
+				this.value = "";
+			}
+		}).blur(function() {
+			if( !this.value.length ) {
+				this.value = this.defaultValue;
+			}
 		});
-		$('.ym-searchfield').focusout(function(){
-		    $(this).attr('placeholder',$(this).data('holder'));
-		});
-	});
+	};
+	
+	$("input[type=text]").field();
 
 	// search box commit
 	$('#submit').click(function(){
